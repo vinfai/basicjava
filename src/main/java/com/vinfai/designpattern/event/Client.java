@@ -4,7 +4,7 @@ import java.util.Date;
 /**
  * java 事件处理模型
  * @author vinfai
- *
+ *  
  */
 public class Client {
 	
