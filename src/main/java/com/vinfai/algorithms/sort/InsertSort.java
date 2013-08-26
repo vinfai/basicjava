@@ -12,7 +12,7 @@ package com.vinfai.algorithms.sort;
  * @author vinfai
  *
  */
-public class InsertSort {
+public class InsertSort extends AbstractSort{
 	
 	public static void main(String[] args){
 		int[] arr = {10,5,87,32,88,26,78,2};
@@ -25,24 +25,17 @@ public class InsertSort {
 		//2.从第二个元素开始，和第一个元素比较
 		for(int i=1;i<arr.length;i++){
 			int pos = arr[i];
-			int posIndex = i;
+			int posIndex = i-1;
 			
 			//将pos值同R[0..i-1]比较，插入到相应的位置
-			while(posIndex>0&&pos<=arr[posIndex-1]){
-				arr[posIndex] = arr[posIndex-1];
+			while(posIndex>=0&&pos<=arr[posIndex]){
+				arr[posIndex+1] = arr[posIndex];
 				posIndex -- ;
 			}
-			arr[posIndex] = pos;//最后将哨兵位置的值放到腾空位置
+			arr[posIndex+1] = pos;//最后将哨兵位置的值放到腾空位置
 			doPrint(arr, i);
 		}
 		
 	}
 	
-	public static void doPrint(int[] arr,int round){
-		System.out.print("round "+round+" : ");
-		for(int i=0;i<arr.length;i++){
-			System.out.print(arr[i]+",");
-		}
-		System.out.println();
-	}
 }
