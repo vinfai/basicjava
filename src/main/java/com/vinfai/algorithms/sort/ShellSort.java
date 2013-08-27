@@ -21,8 +21,8 @@ public class ShellSort extends AbstractSort{
 	public static void shellSort(int[] arr){
 		int len = arr.length;
 		int d  = len/2; //增量
+		int k  = 0;
 		while(d>=1){
-			int k  = 0;
 			//这里就是一个arr中以d间隔的元素组成的 数组 进行插入排序;
 			for(int i=d;i<arr.length;i++){//0-9
 				int j = i-d; //新队列 中的上一个元素;from zero ; if i=5; 0,5;1,6;2,7,3,8;4,9
@@ -35,7 +35,7 @@ public class ShellSort extends AbstractSort{
 				arr[j+d] = temp;//循环中可能是负数;
 			}
 			d = d/2;
-			k = k++;
+			++k;
 			doPrint(arr, k);
 		}
 	}
