@@ -39,7 +39,6 @@ public class RecursiveThread2 implements Runnable{
 	private static Semaphore[] semaphores = new Semaphore[]{
 			new Semaphore(1),new Semaphore(0),new Semaphore(0)
 	};
-	AbstractStringBuilder
 	public void run(){
 		int count = 1 ;
 		try{
