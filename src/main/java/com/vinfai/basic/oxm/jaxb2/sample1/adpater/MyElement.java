@@ -6,7 +6,7 @@ import com.vinfai.basic.oxm.jaxb2.sample1.MyAdress;
 
 /**
  * Map translate
- * @author fangwh
+ * @author vinfai
  *
  */
 public class MyElement {
