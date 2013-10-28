@@ -4,7 +4,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
-
+/**
+ * 输出是日期格式
+ * @author vinfai
+ *
+ */
 public class MyDateForamt extends XmlAdapter<String, Date>{
 
 	public static String FORMAT_STYLE = "yyyy-MM-dd";
