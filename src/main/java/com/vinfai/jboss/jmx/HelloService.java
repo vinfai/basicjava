@@ -1,7 +1,12 @@
 package com.vinfai.jboss.jmx;
 
 import org.jboss.system.ServiceMBeanSupport;
-
+/**
+ * Jboss MBean demo <br>
+ * 		extends ServiceMBeanSupport implements HelloServiceMBean
+ * @author vinfai
+ * 
+ */
 public class HelloService extends ServiceMBeanSupport implements HelloServiceMBean{
 	private String message;
 	
