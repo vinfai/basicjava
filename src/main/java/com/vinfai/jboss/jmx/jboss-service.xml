@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ===================================================================== -->
+<!--                                                                       -->
+<!--  UUID Key Generator Factory Service Configuration                     -->
+<!--                                                                       -->
+<!-- ===================================================================== -->
+
+<server>
+
+  <!-- UUIDKeyGeneratorFactoryService -->
+  <mbean code="com.vinfai.jboss.jmx.HelloService"
+         name="jboss:service=HelloService">
+       <attribute name="Message">test hello message</attribute>
+       <!-- 首字母必须大写 -->
+       <attribute name="TableName">tttt</attribute>
+  </mbean>
+</server>
+

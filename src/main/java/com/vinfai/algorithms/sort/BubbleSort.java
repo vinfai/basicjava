@@ -7,7 +7,7 @@ package com.vinfai.algorithms.sort;
  * 基本排序：冒泡排序、选择排序
  * 
  * @author vinfai
- *
+ * 
  */
 public class BubbleSort {
 
