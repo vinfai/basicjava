@@ -9,6 +9,13 @@ import javax.management.MBeanException;
 import javax.management.MBeanInfo;
 import javax.management.NotificationBroadcasterSupport;
 import javax.management.ReflectionException;
+
+import org.aopalliance.aop.Advice;
+import org.springframework.aop.AfterReturningAdvice;
+import org.springframework.aop.BeforeAdvice;
+import org.springframework.aop.MethodBeforeAdvice;
+import org.springframework.aop.Pointcut;
+import org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor;
 /**
  * dynamic MBean demo <br>
  * 
@@ -21,7 +28,6 @@ public class SimpleDynamic extends NotificationBroadcasterSupport implements Dyn
 	public Object getAttribute(String attribute)
 			throws AttributeNotFoundException, MBeanException,
 			ReflectionException {
-		
 		if(attribute==null){
 			throw new AttributeNotFoundException();
 		}
@@ -67,5 +73,4 @@ public class SimpleDynamic extends NotificationBroadcasterSupport implements Dyn
 		return null;
 	}
 
-	
 }
