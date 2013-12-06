@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="person" name="person" class="com.vinfai.spring.aop.proxyfactory.Person">
+	<constructor-arg value="vinfai"></constructor-arg>
+</bean>
+
+<bean id="pointcut" name="pointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+	<property name="mappedNames">
+		<list>
+			<value>*say</value>
+		</list>
+	</property>
+	<!--<property name="mappedName">
+            <value>*say</value>
+        </property>
+	-->
+</bean>
+<!-- advice --> 
+<bean id="myadvice" name="myadvice" class="com.vinfai.spring.aop.proxyfactory.MyBeforeAdvice"/>
+
+<!-- advisor -->
+<bean id="myadvisor" name="myadvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+	<property name="pointcut">
+		<ref local="pointcut"/>
+	</property>
+	<property name="advice">
+		<ref local="myadvice"/>
+	</property>
+</bean>
+<!-- proxy factory bean -->
+<bean name="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean" >
+	<!--<property name="targetName">
+		<value>person</value>
+	</property>
+	-->
+	<property name="target" ref="person"/>
+	<property name="interceptorNames">
+		<list>
+			<idref local="myadvisor"/>
+		</list>
+	</property>
+</bean>
+
+</beans>
