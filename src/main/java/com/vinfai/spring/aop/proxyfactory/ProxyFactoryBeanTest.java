@@ -29,7 +29,6 @@ public class ProxyFactoryBeanTest {
 		proxy.dosay();
 		
 		//ProxyFactoryBean
-		
 		//TransactionProxyFactoryBean
 	}
 }
