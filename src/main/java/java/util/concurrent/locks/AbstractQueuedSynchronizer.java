@@ -626,7 +626,7 @@ public abstract class AbstractQueuedSynchronizer
 
     /**
      * Wakes up node's successor, if one exists.
-     *
+     * 唤醒node节点的后继节点
      * @param node the node
      */
     private void unparkSuccessor(Node node) {
@@ -636,7 +636,7 @@ public abstract class AbstractQueuedSynchronizer
          * fails or if status is changed by waiting thread.
          */
         int ws = node.waitStatus;
-        if (ws < 0)
+        if (ws < 0)//当前node已经释放锁了，状态设置为0
             compareAndSetWaitStatus(node, ws, 0); 
 
         /*
@@ -645,6 +645,9 @@ public abstract class AbstractQueuedSynchronizer
          * traverse backwards from tail to find the actual
          * non-cancelled successor.
          */
+        //从头结点的下一个节点开始寻找继任节点，当且仅当继任节点的waitStatus<=0才是有效继任节点，否则将这些waitStatus>0（也就是CANCELLED的节点）从AQS队列中剔除  
+        //这里并没有从head->tail开始寻找，而是从tail->head寻找最后一个有效节点。
+        //解释在这里 http://www.blogjava.net/xylz/archive/2010/07/08/325540.html#377512
         Node s = node.next;
         if (s == null || s.waitStatus > 0) {
             s = null;
@@ -1257,10 +1260,10 @@ public abstract class AbstractQueuedSynchronizer
      * @return the value returned from {@link #tryRelease}
      */
     public final boolean release(int arg) {
-        if (tryRelease(arg)) {
+        if (tryRelease(arg)) {//尝试释放锁，子类实现
             Node h = head;
             if (h != null && h.waitStatus != 0)
-                unparkSuccessor(h);
+                unparkSuccessor(h);//唤醒后继节点
             return true;
         }
         return false;
@@ -2002,8 +2005,8 @@ public abstract class AbstractQueuedSynchronizer
         public final void await() throws InterruptedException {
             if (Thread.interrupted())
                 throw new InterruptedException();
-            Node node = addConditionWaiter();
-            int savedState = fullyRelease(node);
+            Node node = addConditionWaiter();//增加节点（当前线程）到条件队列中
+            int savedState = fullyRelease(node);//释放节点线程锁
             int interruptMode = 0;
             while (!isOnSyncQueue(node)) {
                 LockSupport.park(this);
