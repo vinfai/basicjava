@@ -19,10 +19,12 @@ public class QuickSort{
 		}
 		while(i!=j){
 			//右侧开始找起，直到找到比基准值小的元素停止，其中i<j;eg:3 j=6
+			//从j开始向前搜索，即由后开始向前搜索(j--)，找到第一个小于key的值A[j]，将A[j]赋给A[i]；
 			while(i<j&&pos<=arr[j]){
 				j--;
 			}
 			//再从左侧开始找，直到找到比基准值大的元素停止，其中i<j;eg:9 i=3
+			//从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]赋给A[j]
 			while(i<j&&pos>=arr[i]){
 				i++;
 			}
