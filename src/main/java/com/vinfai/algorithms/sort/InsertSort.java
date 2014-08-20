@@ -8,7 +8,6 @@ package com.vinfai.algorithms.sort;
     　①若R[j]的关键字大于R[i]的关键字，则将R[j]后移一个位置；
         ②若R[j]的关键字小于或等于R[i]的关键字，则查找过程结束，j+1即为R[i]的插入位置。
     　关键字比R[i]的关键字大的记录均已后移，所以j+1的位置已经腾空，只要将R[i]直接插入此位置即可完成一趟直接插入排序。
-    
  * @author vinfai
  *
  */
@@ -35,7 +34,5 @@ public class InsertSort extends AbstractSort{
 			arr[posIndex+1] = pos;//最后将哨兵位置的值放到腾空位置
 			doPrint(arr, i);
 		}
-		
 	}
-	
 }
