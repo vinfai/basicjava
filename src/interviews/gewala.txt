@@ -1,0 +1,89 @@
+1.如果你只有1个3升水的杯子和1个5升水的杯子,如何测量出4升水?
+
+①将5升水杯装满，倒入到3升水杯中，则5升水杯中含2升。
+②将3升水杯中水倒掉，再将5升水杯中的2升水倒入。
+③将5升水杯装满，再倒入3升水杯中，倒满。则5升水杯中含4升。
+
+
+2.三人去旅店每个人10元住一个三人间共三十元,老板说今天打折只要25元,剩下5元让服务员还给三个人,结果服务员私吞了2元,将剩下三元还给3人,每人得到1元。问题: 一共三十元,老板拿了25元,服务员拿了2元,旅客每人
+拿了1元,结果每个客人花了10-1=9块钱, 问题 9x3 + 2 = 29元,剩下的1元去哪里了?
+支出：30-3 = 27；
+收入：25+2 = 27；
+
+3.人照镜子的时候都是左右颠倒,而不是上下颠倒,为何？
+平面镜成像原理，光的反射
+4.servlet的生命周期
+初始化+调用init()方法 --> service()/post/get -->destory
+
+5.名词解释 J2EE , RMI , JTA , JPA , REST , JMS ,AOP
+RMI：remote method invoke  远程方法调用，用于系统间通信
+JTA: JAVA transcation api 分布式事物
+	事务管理器（Transaction Manager）和一个或多个支持 XA 协议的资源管理器 ( Resource Manager ) 两部分【多个数据库】
+	http://www.ibm.com/developerworks/cn/java/j-lo-jta/
+JPA: JAVA Persistence api 持久化API，POJO持久化规范，厂商：hibernate ,openJPA
+JMS: JAVA MESSAGE SERVICE 系统间消息服务
+AOP: 面向切面编程
+REST: 表述性状态转移,一组架构约束条件和原则,如order/{1}，在http get/post/delele含义不一样
+6.JAVA访问修饰词的作用各是什么?
+访问权限不同
+private 类本身可见
+default 同包访问权限
+protected 继承访问权限
+public 都可见
+		 本类 	同包    继承关系  其他包
+private  √
+default  √      √
+protected √     √     √
+public 	  √		√	  √      √
+7.请说出常用的排序方法
+	冒泡排序
+	插入排序
+	选择排序
+	
+	
+8.finally的实现原理
+	
+9.请写出快速排序方法
+
+10.请写出4个线程对同一个变量进行操作,其中两个线程减1,另两个线程加1.(大概是这个意思)
+
+11.JVM优化的方法
+内存设置：
+	Permanent Space: 
+-Xms -Xmx -XPermSzie -XMaxPermSize -newSize newRate
+
+12.redirect实现的原理
+client 2次请求，1、
+
+JAVA工程师职位面试问题：
+
+1. servlet何时进行实例化
+
+
+
+
+---another
+1. servlet何时进行实例化? 何时调用destroy方法? 
+2.hibernate的乐观锁如何实现?有何作用?
+3.请回答spring到底是什么?
+4.对于原始类型和对象java虚拟机处理有何不同?
+5.泛型是如何实现的?
+6.中文乱码的根本原因是什么?
+
+7.请解释下哈希表是如何实现的?
+8.系统优化的方法有哪些?
+	1、前段
+		减少请求次数：合并js/css
+		压缩大小：js/css
+		前段缓存：client缓存，反向代理,CDN,
+		
+	2、服务层 ：
+	3、数据层
+	4、
+9.说说你所了解的缓存有哪几种?
+
+10.spring是怎样和struts2集成的?怎么样struts2才算和spring集成了?
+11.请说下系统中一般如何处理异常?
+系统级
+业务及
+12.具体说说redirect是实现的原理??

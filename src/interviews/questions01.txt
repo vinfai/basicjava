@@ -1,0 +1,85 @@
+http://www.cnblogs.com/wing011203/archive/2013/05/24/3096502.html
+Spring
+为什么要用Spring？
+IoC究竟能带来什么好处？详细解释在扩展性上带来的好处？
+如何实例化一个Bean？
+ApplicationContext和BeanFactory有什么区别？
+
+如何通过Spring读取外部文件？
+
+ResourceLoader
+
+Spring配置文件中，Bean的id是否可以重复？
+Answer: 
+1、在spring同一个配置文件中，不能存在id相同的两个bean，否则会报错。
+2、在两个不同的spring配置文件中，可以存在id相同的两个bean，启动时，不会报错。
+这是因为spring ioc容器在加载bean的过程中，类DefaultListableBeanFactory会对id相同的bean进行处理：后加载的配置文件的bean，覆盖先加载的配置文件的bean。DefaultListableBeanFactory类中，有个属性allowBeanDefinitionOverriding，默认值为true，该值就是用来指定出现两个bean的id相同的情况下，如何进行处理。如果该值为false，则不会进行覆盖，而是抛出异常。
+
+解释Spring中的自动装配和类型检查？
+
+当系统中存在多个Spring配置文件，ApplicationContext可否一次全部加载？如果其中的id有重复应该如何处理？
+
+什么是AOP？AOP中涉及到哪些术语并进行解释？
+
+Spring是如何实现AOP的？详细描述动态代理？
+
+
+Java Collection
+TreeSet和HashSet的区别？
+TreeSet是如何实现排序的？
+Comparable和Comparator有什么区别？
+Java IO
+Stream和Reader/Writer有什么区别？
+如何读取一个文本文件？
+如何重定向System.out，使其输出到一个外部文件？
+System.out是什么类型？
+Java Serialization
+如何进行序列化？
+Serializable接口中定义的变量有什么作用？
+如何通过Serialization实现深拷贝？
+Serializable属于标示性接口，这种类型的接口有什么作用？
+Java Synchronization
+为什么要做同步管理？
+线程同步的含义是什么？
+Java有哪些方式实现同步管理（针对线程对象中的公有成员）？
+如果一个类中有两组方法，组内方法互斥，组间方法并发，应该如何做？
+实现线程池的思路？
+Java Exception
+checked exception 和 unchecked exception的区别？
+如何创建一个unchecked exception？
+什么是异常转译？它的作用是什么？
+在多层结构中，如何处理异常？
+Java JDBC
+JDBC和事务相关的API（启动、提交、回滚）？
+JDBC和数据库连接池相关的API？
+　　Other
+String、StringBuffer和StringBuilder的区别？
+Tomcat配置文件的结构？如何配置数据库连接池？
+Apache和Tomcat集成时，Apache如何向Tomcat通信？
+
+
+　这是最近一次面试过程中谈到的相关话题，对其进行记录。
+
+名词解释：super/final/PreparedStatement/EntityManager
+抽象类和接口的区别
+annotation的作用
+设计并实现一个集合列表，并且可以删除指定值
+设计并实现二叉树，元素类型为Integer，可以为null，并且可以返回最大值
+策略模式/代理模式/模板方法模式
+如何控制一个方法同时最多有N个线程访问
+线程和进程的区别
+网络7层结构的名称和功能
+使用过的开源工具
+
+
+
+这是最近一次面试过程中谈到的相关话题，对其进行记录。
+
+如何需要将一个对象放到Hashtable中，应该重写哪些方法？如何实现？
+实现一个单例模式？要求线程同步、延迟加载和泛型。
+设计并实现一个缓存管理模块，要求可以缓存10，000个对象。
+设计并实现一个日志模块。
+设计并实现一个迭代器，用户可以使用过滤规则对集合中的元素进行过滤，迭代时只输出符合规则的元素。
+如何使得对象实现序列化。
+JDBC启动、提交、回滚事务的API。
+有10,000个网页，其中包含有电话号码，现在需要将电话号码抽取出来并去重，应该如何设计，使用哪些技术。

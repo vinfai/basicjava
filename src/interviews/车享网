@@ -1,0 +1,28 @@
+車享網面試題(2014.4.16)
+時間:2014-04-17 20:28來源:Internet 作者:Internet 點擊: 488 次
+1.java內存泄露怎麼監控，怎麼減少內存泄露，怎麼優化   http://go.rritw.com/fgh2011.iteye.com/blog/1507422   http://go.rritw.
+1.java內存泄露怎麼監控，怎麼減少內存泄露，怎麼優化
+  http://go.rritw.com/fgh2011.iteye.com/blog/1507422
+  http://go.rritw.com/blog.csdn.net/jacky0922/article/details/6201878
+2.常用的設計模式有哪些，畫出一個設計模式的UML圖
+http://go.rritw.com/blog.csdn.net/sfdev/article/details/2845488
+3.JMS的消息類型(5種)
+http://go.rritw.com/www.blogjava.net/badboyryan/archive/2007/08/06/134713.html
+4.servlet怎麼設置cookie,刪除cooike
+http://go.rritw.com/uule.iteye.com/blog/1055312
+response.addCookie(cookie);
+cookie.setMaxAge(0);
+設置为0为立即刪除該Cookie；
+5.對象有依賴關系，線程無法應用GC會回收嗎
+6.線程yied的作用，與sleeping的區別
+http://go.rritw.com/dylanxu.iteye.com/blog/1322066
+3、yield()
+該方法與sleep()類似，只是不能由用戶指定暫停多長時間，並且yield（）方法只能讓同優先級的線程有執行的機會。
+7.畫出項目的圖，框架圖，項目示意圖
+8熟悉的開源框架有哪些(netty通訊的，mina)
+9.什麼時候用多線程，什麼場景下使用
+ 數據的並行處理，多線程拉數據
+10.什麼時候用讀锁，什麼時候用寫锁
+http://go.rritw.com/shmilyaw-hotmail-com.iteye.com/blog/1885556
+11.spring的resutful是怎麼實現的，可以畫下嗎
+ http://go.rritw.com/angelosun.iteye.com/blog/1867004
